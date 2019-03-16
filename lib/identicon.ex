@@ -2,6 +2,11 @@ defmodule Identicon do
   def main(input) do
     input
     |> hash_input
+    |> pick_color
+  end
+
+  def pick_color(%Identicon.Image{hex: [r, g, b | _tail]}) do
+    [r, g, b]
   end
 
   @doc """
