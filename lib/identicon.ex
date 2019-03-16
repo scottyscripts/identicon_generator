@@ -5,10 +5,14 @@ defmodule Identicon do
   end
 
   @doc """
-  generates list of bytes by creating hash value from string using md5 algorithm
+  generates `Identicon.Image` struct created from list of bytes
+
+  `input` is a string that gets hashed using md5 algorithm
   """
   def hash_input(input) do
-    :crypto.hash(:md5, input)
+    hex = :crypto.hash(:md5, input)
     |> :binary.bin_to_list
+
+    %Identicon.Image{hex: hex}
   end
 end
