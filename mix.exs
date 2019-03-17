@@ -19,7 +19,8 @@ defmodule Identicon.MixProject do
 
   defp deps do
     [
-      {:egd, github: "erlang/egd"}
+      {:egd, github: "erlang/egd"},
+      {:ex_doc, "~> 0.10", only: :dev}
     ]
   end
 end

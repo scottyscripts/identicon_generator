@@ -20,9 +20,7 @@ defmodule Identicon do
 
   @doc """
   Hashes an input string using md5 algorithm.
-  Converts new hash to list.
-
-  Creates new `%Identicon.Image` struct and saves hash list to `hex` field.
+  Converts new hash to list and saves to `%Identicon.Image` struct's `hex` field.
   """
   def hash_input_str(input) do
     hex = :crypto.hash(:md5, input)
