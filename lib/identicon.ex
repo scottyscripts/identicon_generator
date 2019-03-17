@@ -6,6 +6,7 @@ defmodule Identicon do
     |> pick_color
     |> build_grid
     |> filter_odd_squares
+    |> build_pixel_map
   end
 
   def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
@@ -37,6 +38,21 @@ defmodule Identicon do
     %Identicon.Image{image | grid: filtered_grid}
   end
 
+  def build_pixel_map(%Identicon.Image{grid: grid} = image) do
+    pixel_map =
+      grid
+      |> Enum.map(fn({_code, index}) ->
+        horizontal_origin = rem(index, 5) * 50
+        vertical_origin = div(index, 5) * 50
+
+        top_left = {horizontal, vertical}
+        bottom_right = {horizontal + 50, vertical + 50}
+
+        {top_left, bottom_right}
+      end)
+
+      %Identicon.Image{image | pixel_map: pixel_map}
+  end
   @doc """
   generates `Identicon.Image` struct created from list of bytes
 
