@@ -1,9 +1,11 @@
 defmodule Identicon do
+  require Integer
   def main(input) do
     input
     |> hash_input
     |> pick_color
     |> build_grid
+    |> filter_odd_squares
   end
 
   def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
@@ -23,6 +25,16 @@ defmodule Identicon do
 
   def mirror_row([first, second | _tail] = row) do
     row ++ [second, first]
+  end
+
+  def filter_odd_squares(%Identicon.Image{grid: grid} = image) do
+    filtered_grid =
+      grid
+      |> Enum.filter(fn({code, _index}) ->
+        Integer.is_even(code)
+      end)
+
+    %Identicon.Image{image | grid: filtered_grid}
   end
 
   @doc """
