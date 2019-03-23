@@ -139,6 +139,8 @@ defmodule Identicon do
   File name determined by original input string passed to `main/1`
   """
   def save_image(image, input) do
+    path = "images/#{input}.png"
+    IO.puts("Saving identicon to ./#{path}")
     File.write("images/#{input}.png", image)
   end
 
