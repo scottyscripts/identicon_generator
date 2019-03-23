@@ -1,12 +1,14 @@
 # Identicon Generator
 
-![Identicon](https://user-images.githubusercontent.com/13722245/54872077-d7a62800-4d94-11e9-9775-5424fd38eb60.png)
+<kbd>
+  <img alt="Identicon" src="https://user-images.githubusercontent.com/13722245/54872077-d7a62800-4d94-11e9-9775-5424fd38eb60.png">
+</kbd>
 
-This Elixir application generates 5x5 (identicon)[https://en.wikipedia.org/wiki/Identicon] images for a given string.
+This Elixir application generates 5x5 [identicons](https://en.wikipedia.org/wiki/Identicon) for a given string.
 
-The basis for this app is from Udemy course (The Complete Elixir and Phoenix Bootcamp)[https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/].
+The basis for this app is from Udemy course [The Complete Elixir and Phoenix Bootcamp](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/).
 
-I have made some small changes and have enabled running this app from the CLI via `escript`.
+I have made some changes and have enabled running this app from the CLI using `escript`.
 
 ## Setting Up
 
